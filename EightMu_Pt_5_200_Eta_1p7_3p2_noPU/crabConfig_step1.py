@@ -22,6 +22,7 @@ config = Configuration()
 config.section_("General")
 config.General.requestName = REQUEST_NAME
 config.General.transferOutputs = True
+config.General.workArea = "crab_projects"
 
 config.section_("JobType")
 config.JobType.pluginName = 'PrivateMC'
