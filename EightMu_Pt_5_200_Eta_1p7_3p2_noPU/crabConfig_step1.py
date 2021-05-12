@@ -4,8 +4,8 @@ from WMCore.Configuration import Configuration
 
 SAMPLE = 'EightMu_Pt_5_200_Eta_1p7_3p2_noPU'
 PSET_NAME = 'step_1_GEN-SIM_cfg.py'
-UNITS_PER_JOB = 130
-JOBS = 100
+UNITS_PER_JOB = 100
+JOBS = 1300
 
 CMSSW_VERSION = os.environ['CMSSW_VERSION']
 TOTAL_UNITS = UNITS_PER_JOB * JOBS # ~ 100k
