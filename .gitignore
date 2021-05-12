@@ -156,4 +156,5 @@ Thumbs.db
 ## CRAB ##
 **/crab.log
 **/crab_projects
+CMSSW_*
 # End of CRAM
