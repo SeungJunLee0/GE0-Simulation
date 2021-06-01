@@ -2,16 +2,31 @@ import os
 import CRABClient
 from WMCore.Configuration import Configuration
 
-SAMPLE = 'EightMu_Pt_5_200_Eta_1p7_3p2_noPU'
+################################################################################
+# NOTE
+################################################################################
+SAMPLE = 'EightMu_Pt_5_200_Eta_1p7_3p2'
+GEOMETRY =  '2026D76'
 PSET_NAME = 'step_1_GEN-SIM_cfg.py'
 UNITS_PER_JOB = 100
-JOBS = 1300
+JOBS = 5000
 
+################################################################################
+# NOTE
+################################################################################
 CMSSW_VERSION = os.environ['CMSSW_VERSION']
-TOTAL_UNITS = UNITS_PER_JOB * JOBS # ~ 100k
+
+TOTAL_UNITS = UNITS_PER_JOB * JOBS
+
 STEP = PSET_NAME.replace('_cfg.py', '')
+
 OUTPUT_PRIMARY_DATASET = 'GE0_{sample}'.format(sample=SAMPLE)
-OUTPUT_DATASET_TAG = '{version}_{step}'.format(version=CMSSW_VERSION, step=STEP)
+
+OUTPUT_DATASET_TAG = '{version}_{geometry}_{step}'.format(
+    version=CMSSW_VERSION,
+    geometry=GEOMETRY,
+    step=STEP)
+
 REQUEST_NAME = OUTPUT_PRIMARY_DATASET + '_' + OUTPUT_DATASET_TAG
 
 ################################################################################
